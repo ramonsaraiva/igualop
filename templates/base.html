@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}=op{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+		<script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+		{% block extra_head %}{% endblock %}
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<a class="navbar-brand">=op</a>
+					<ul class="nav navbar-nav">
+						<li><a href="{{ url_for('home') }}">home</a></li>
+						<li><a href="{{ url_for('upload') }}">upload</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			{% block body %}{% endblock %}
+		</div>
+	</body>
+</html>
